@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据分析," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="课程介绍 近两年来，数据分析师的岗位需求非常大，90%的岗位技能需要掌握Python作为数据分析工具，本课程以案例驱动的方式讲解如何利用Python完成数据获取、处理、数据分析及可视化方面常用的数据分析方法与技巧。">
+<meta name="keywords" content="数据分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python数据分析">
+<meta property="og:url" content="git@github.com:ItVideos/ItVideos.github.io.git/2018/01/19/大数据/Python数据分析/index.html">
+<meta property="og:site_name" content="JustDoIt">
+<meta property="og:description" content="课程介绍 近两年来，数据分析师的岗位需求非常大，90%的岗位技能需要掌握Python作为数据分析工具，本课程以案例驱动的方式讲解如何利用Python完成数据获取、处理、数据分析及可视化方面常用的数据分析方法与技巧。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://cdn.chinahadoop.cn/files/course/2017/09-07/1535313b8f13789028.png">
+<meta property="og:updated_time" content="2018-01-19T03:02:44.183Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python数据分析">
+<meta name="twitter:description" content="课程介绍 近两年来，数据分析师的岗位需求非常大，90%的岗位技能需要掌握Python作为数据分析工具，本课程以案例驱动的方式讲解如何利用Python完成数据获取、处理、数据分析及可视化方面常用的数据分析方法与技巧。">
+<meta name="twitter:image" content="http://cdn.chinahadoop.cn/files/course/2017/09-07/1535313b8f13789028.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="git@github.com:ItVideos/ItVideos.github.io.git/2018/01/19/大数据/Python数据分析/"/>
+
+
+
+
+
+  <title>Python数据分析 | JustDoIt</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JustDoIt</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">IT视频教程资源站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="git@github.com:ItVideos/ItVideos.github.io.git/2018/01/19/大数据/Python数据分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JackChan(QQ2434276084)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/allen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JustDoIt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python数据分析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T11:02:44+08:00">
+                2018-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/19/大数据/Python数据分析/" class="leancloud_visitors" data-flag-title="Python数据分析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h2><p><img src="http://cdn.chinahadoop.cn/files/course/2017/09-07/1535313b8f13789028.png" alt=""></p>
+<p>近两年来，数据分析师的岗位需求非常大，90%的岗位技能需要掌握Python作为数据分析工具，本课程以案例驱动的方式讲解如何利用Python完成数据获取、处理、数据分析及可视化方面常用的数据分析方法与技巧。</p>
+<a id="more"></a>
+<h2 id="升级版-第二期的课程更新内容"><a href="#升级版-第二期的课程更新内容" class="headerlink" title="升级版### 第二期的课程更新内容"></a>升级版### 第二期的课程更新内容</h2><p>本期课程在《Python数据分析》升级版的基础上，主要新增了探索性数据分析（Exploratory Data Analysis，EDA）、金融数据量化分析及深度学习基础等三大数据分析工具，覆盖了时下最前沿的数据分析技术。具体新增内容如下：</p>
+<ol>
+<li>新增探索性数据分析，更好地结合数据可视化发掘数据的模式与特点</li>
+<li>新增金融数据量化分析，更好地结合时间序列分析探索金融数据的发展趋势</li>
+<li>新增深度学习基础，更好地结合机器学习探索人工智能的技术趋势</li>
+<li>升级并调整全部随课项目，并提供更详细的分析步骤</li>
+<li>系统性地将相关章节的项目整理成一个完整的项目，使学员能够更加充分地理解数据分析的流程和步骤</li>
+</ol>
+<h2 id="面向人群"><a href="#面向人群" class="headerlink" title="面向人群"></a>面向人群</h2><ol>
+<li>想了解和学习典型的数据分析流程和实践方法的学习者</li>
+<li>想接触和学习非结构化数据(比如：文本、图像等)分析的学习者</li>
+<li>想学习数据分析中常用建模知识的相关从业人员</li>
+<li>尚不会使用Python的数据分析师从业者</li>
+<li>想转行从事数据分析师行业的学习者</li>
+<li>想使用Python实现金融数据分析、机器学习或深度学习的工程师  </li>
+</ol>
+<h2 id="学习收益"><a href="#学习收益" class="headerlink" title="学习收益"></a>学习收益</h2><p>通过本课程的学习，学员将会收获：</p>
+<ol>
+<li>熟悉数据分析的流程，包括数据采集、处理、可视化、数据建模等</li>
+<li>掌握Python语言作为数据分析工具，从而有能力驾驭不同领域数据分析实践</li>
+<li>掌握非结构化数据的处理与分析、探索性数据分析及量化分析</li>
+<li>快速积累多个业务领域数据分析项目经验，包括金融数据、文本数据及图像数据</li>
+<li>掌握使用Python实现基于机器学习及深度学习的数据分析和预测</li>
+<li>掌握数据分析中常用的建模知识</li>
+</ol>
+<h2 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h2><h3 id="第一课-工作环境准备及数据分析建模理论基础-2-3课时"><a href="#第一课-工作环境准备及数据分析建模理论基础-2-3课时" class="headerlink" title="第一课 工作环境准备及数据分析建模理论基础 (2-3课时)"></a>第一课 工作环境准备及数据分析建模理论基础 (2-3课时)</h3><ol>
+<li>课程介绍</li>
+<li>数据分析的基本概念</li>
+<li>Python简介和环境部署</li>
+<li>NumPy数据结构及向量化</li>
+<li>数据分析建模理论基础<br>a. 机器学习基础<br>b. 数据分析建模过程<br>c. 常用的数据分析建模工具</li>
+<li>实战案例1：使用Python实现蒙特卡洛模拟的期权估值</li>
+</ol>
+<h3 id="第二课-数据分析工具Pandas-2-3课时"><a href="#第二课-数据分析工具Pandas-2-3课时" class="headerlink" title="第二课 数据分析工具Pandas (2-3课时)"></a>第二课 数据分析工具Pandas (2-3课时)</h3><ol>
+<li>Pandas的数据结构</li>
+<li>Pandas的数据操作<br>a. 数据的导入、导出<br>b. 数据的过滤筛选<br>c. 索引及多重索引</li>
+<li>Pandas统计计算和描述</li>
+<li>数据的分组与聚合</li>
+<li>数据清洗、合并、转化和重构</li>
+<li>实战案例2-1：Lending Club借贷数据处理及初步分析</li>
+</ol>
+<h3 id="第三课-探索性数据分析-EDA-及数据可视化-2-3课时"><a href="#第三课-探索性数据分析-EDA-及数据可视化-2-3课时" class="headerlink" title="第三课 探索性数据分析(EDA)及数据可视化 (2-3课时)"></a>第三课 探索性数据分析(EDA)及数据可视化 (2-3课时)</h3><ol>
+<li>什么是EDA</li>
+<li>探索单变量、多变量的关系及其可视化</li>
+<li>3D绘图</li>
+<li>实战案例2-2：Lending Club借贷数据探索性分析及可视化</li>
+</ol>
+<h3 id="第四课-机器学习及scikit-learn-2-3课时"><a href="#第四课-机器学习及scikit-learn-2-3课时" class="headerlink" title="第四课 机器学习及scikit-learn(2-3课时)"></a>第四课 机器学习及scikit-learn(2-3课时)</h3><ol>
+<li>机器学习基本概念与流程</li>
+<li>Python机器学习库scikit-learn</li>
+<li>常用评价指标</li>
+<li>分类预测模型– Logistic回归与Softmax回归</li>
+<li>实战案例2-3：Lending Club借贷违约预测</li>
+</ol>
+<h3 id="第五课-金融数据分析-1-–金融时间序列-2-3课时"><a href="#第五课-金融数据分析-1-–金融时间序列-2-3课时" class="headerlink" title="第五课 金融数据分析(1)–金融时间序列(2-3课时)"></a>第五课 金融数据分析(1)–金融时间序列(2-3课时)</h3><ol>
+<li>Pandas的时间处理及操作</li>
+<li>金融数据</li>
+<li>金融学图表</li>
+<li>高频数据分析</li>
+<li>实战案例3-1：股票收益率回归分析</li>
+</ol>
+<h3 id="第六课-金融数据分析-2-–量化分析-2-3课时-量化分析基础"><a href="#第六课-金融数据分析-2-–量化分析-2-3课时-量化分析基础" class="headerlink" title="第六课 金融数据分析(2)–量化分析 (2-3课时)量化分析基础"></a>第六课 金融数据分析(2)–量化分析 (2-3课时)量化分析基础</h3><ol>
+<li>量化策略建模流程及回测</li>
+<li>常用量化分析指标及框架</li>
+<li>TA-Lib金融软件工具</li>
+<li>实战案例3-2：多因子策略模型 </li>
+</ol>
+<h3 id="第七课-图像数据处理及分析-2-3课时"><a href="#第七课-图像数据处理及分析-2-3课时" class="headerlink" title="第七课 图像数据处理及分析 (2-3课时)"></a>第七课 图像数据处理及分析 (2-3课时)</h3><ol>
+<li>基本的图像操作和处理</li>
+<li>常用的图像特征描述</li>
+<li>聚类模型：K-Means</li>
+<li>实战案例4：电影海报主色调聚类分析</li>
+</ol>
+<h3 id="第八课-深度学习及TensorFlow-2-3课时"><a href="#第八课-深度学习及TensorFlow-2-3课时" class="headerlink" title="第八课 深度学习及TensorFlow (2-3课时)"></a>第八课 深度学习及TensorFlow (2-3课时)</h3><ol>
+<li>人工神经网络及深度学习</li>
+<li>TensorFlow框架学习及使用</li>
+<li>TensorFlow实现卷积神经网络</li>
+<li>实战案例5：基于TensorFlow的101类图像识别(Caltech101)</li>
+</ol>
+<h3 id="第九课-文本数据分析-2-3课时"><a href="#第九课-文本数据分析-2-3课时" class="headerlink" title="第九课 文本数据分析 (2-3课时)"></a>第九课 文本数据分析 (2-3课时)</h3><ol>
+<li>Python文本分析工具NLTK</li>
+<li>情感分析与文本分类</li>
+<li>TensorFlow实现文本深度表示模型Word2Vec</li>
+<li>分类与预测模型– 朴素贝叶斯</li>
+<li>实战案例6：搜狐新闻数据分类</li>
+</ol>
+<h3 id="第十课-项目实战-2-3课时"><a href="#第十课-项目实战-2-3课时" class="headerlink" title="第十课 项目实战(2-3课时)"></a>第十课 项目实战(2-3课时)</h3><ol>
+<li>交叉验证及参数调整</li>
+<li>特征降维与特征选择</li>
+<li>实战案例7：根据日常新闻预测股市动向</li>
+<li>课程总结</li>
+</ol>
+<h2 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h2><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：</p>
+<p><a href="https://itvideos.github.io/categories/" target="_blank" rel="noopener">教程分类说明</a>：<a href="https://itvideos.github.io/categories/" target="_blank" rel="noopener">https://itvideos.github.io/categories/</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p><a href="https://itvideos.github.io/about/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="JackChan(QQ2434276084) 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="JackChan(QQ2434276084) 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据分析/" rel="tag"># 数据分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/19/大数据/数据分析和数据挖掘/" rel="next" title="数据分析和数据挖掘">
+                <i class="fa fa-chevron-left"></i> 数据分析和数据挖掘
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/21/Android/Android核心技术/" rel="prev" title="Android核心技术">
+                Android核心技术 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/allen.jpg"
+                alt="JackChan(QQ2434276084)" />
+            
+              <p class="site-author-name" itemprop="name">JackChan(QQ2434276084)</p>
+              <p class="site-description motion-element" itemprop="description">远方除了远，一无是处！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程介绍"><span class="nav-number">1.</span> <span class="nav-text">课程介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级版-第二期的课程更新内容"><span class="nav-number">2.</span> <span class="nav-text">升级版### 第二期的课程更新内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向人群"><span class="nav-number">3.</span> <span class="nav-text">面向人群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习收益"><span class="nav-number">4.</span> <span class="nav-text">学习收益</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#课程大纲"><span class="nav-number">5.</span> <span class="nav-text">课程大纲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一课-工作环境准备及数据分析建模理论基础-2-3课时"><span class="nav-number">5.1.</span> <span class="nav-text">第一课 工作环境准备及数据分析建模理论基础 (2-3课时)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二课-数据分析工具Pandas-2-3课时"><span class="nav-number">5.2.</span> <span class="nav-text">第二课 数据分析工具Pandas (2-3课时)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三课-探索性数据分析-EDA-及数据可视化-2-3课时"><span class="nav-number">5.3.</span> <span class="nav-text">第三课 探索性数据分析(EDA)及数据可视化 (2-3课时)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四课-机器学习及scikit-learn-2-3课时"><span class="nav-number">5.4.</span> <span class="nav-text">第四课 机器学习及scikit-learn(2-3课时)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五课-金融数据分析-1-–金融时间序列-2-3课时"><span class="nav-number">5.5.</span> <span class="nav-text">第五课 金融数据分析(1)–金融时间序列(2-3课时)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六课-金融数据分析-2-–量化分析-2-3课时-量化分析基础"><span class="nav-number">5.6.</span> <span class="nav-text">第六课 金融数据分析(2)–量化分析 (2-3课时)量化分析基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七课-图像数据处理及分析-2-3课时"><span class="nav-number">5.7.</span> <span class="nav-text">第七课 图像数据处理及分析 (2-3课时)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八课-深度学习及TensorFlow-2-3课时"><span class="nav-number">5.8.</span> <span class="nav-text">第八课 深度学习及TensorFlow (2-3课时)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第九课-文本数据分析-2-3课时"><span class="nav-number">5.9.</span> <span class="nav-text">第九课 文本数据分析 (2-3课时)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十课-项目实战-2-3课时"><span class="nav-number">5.10.</span> <span class="nav-text">第十课 项目实战(2-3课时)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多教程"><span class="nav-number">6.</span> <span class="nav-text">更多教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取方式"><span class="nav-number">7.</span> <span class="nav-text">获取方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackChan(QQ2434276084)</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("N85VKE1O3YBok6Gmhxyq2zYR-gzGzoHsz", "jDziCU2LPGftl1fXWbb1xfG6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

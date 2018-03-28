@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Phpcms," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="课程介绍让更多的学员通过学习phpcms而能快速建站！">
+<meta name="keywords" content="Phpcms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Phpcms二次开发">
+<meta property="og:url" content="git@github.com:ItVideos/ItVideos.github.io.git/2018/01/18/后端开发/PHP/Phpcms二次开发/index.html">
+<meta property="og:site_name" content="JustDoIt">
+<meta property="og:description" content="课程介绍让更多的学员通过学习phpcms而能快速建站！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-bss.csdn.net/201506160247579821.jpg">
+<meta property="og:updated_time" content="2018-01-18T09:26:15.590Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Phpcms二次开发">
+<meta name="twitter:description" content="课程介绍让更多的学员通过学习phpcms而能快速建站！">
+<meta name="twitter:image" content="https://img-bss.csdn.net/201506160247579821.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="git@github.com:ItVideos/ItVideos.github.io.git/2018/01/18/后端开发/PHP/Phpcms二次开发/"/>
+
+
+
+
+
+  <title>Phpcms二次开发 | JustDoIt</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JustDoIt</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">IT视频教程资源站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="git@github.com:ItVideos/ItVideos.github.io.git/2018/01/18/后端开发/PHP/Phpcms二次开发/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JackChan(QQ2434276084)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/allen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JustDoIt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Phpcms二次开发</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T17:26:15+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/18/后端开发/PHP/Phpcms二次开发/" class="leancloud_visitors" data-flag-title="Phpcms二次开发">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h2><p>让更多的学员通过学习phpcms而能快速建站！</p>
+<p><img src="https://img-bss.csdn.net/201506160247579821.jpg" alt=""></p>
+<a id="more"></a>
+<h2 id="课程目录"><a href="#课程目录" class="headerlink" title="课程目录"></a>课程目录</h2><h3 id="PHPCMS的安装及操作"><a href="#PHPCMS的安装及操作" class="headerlink" title="PHPCMS的安装及操作"></a>PHPCMS的安装及操作</h3><p>本节介绍了什么是二次开发， 为什么要使用二次开发， 产品的二次开发和框架开发的区别， 讲解了本次二次开发课程需要学习的内容。讲解了PHPCMS的开发领域，以及使用PHPCMS开发的产品。还有本节讲解了PHP的运行环境对比，下载并演示安装PHP的运行环境。 本节重点讲解了PHPCMS的下载安装过程。</p>
+<h3 id="公众号后台的基本操作"><a href="#公众号后台的基本操作" class="headerlink" title="公众号后台的基本操作"></a>公众号后台的基本操作</h3><p>本节主要讲解了PHPCMS一些基本模块的操作，像内容模、栏目、模型等的操作演示。重点介绍了PHPCMS的前台页面结构组成， 包括什么是模型，什么是模块， 首页结构、频道页、列表页，内容页，单页等。 重点讲解了模块、模型和栏目的关系。本节的主要内容讲解了一个内容采集模块， 详细的演示了通过PHPCMS</p>
+<h3 id="HTML和CSS基本语法、DIV-CSS页面布局"><a href="#HTML和CSS基本语法、DIV-CSS页面布局" class="headerlink" title="HTML和CSS基本语法、DIV+CSS页面布局"></a>HTML和CSS基本语法、DIV+CSS页面布局</h3><p>本节介绍开发网站必备的基本的HTML标签和属性， 以及CSS的语法，常用选择器和基本样式属性， 本节重点介绍了DIV+CSS页面标准化布局，包括页面布局需要用到的HTMl标签， 布局需要用到的CSS样式属性和盒子模型，基本页面布局的操作演示。</p>
+<h3 id="使用DIV-CSS布局一个完整的网站首页"><a href="#使用DIV-CSS布局一个完整的网站首页" class="headerlink" title="使用DIV+CSS布局一个完整的网站首页"></a>使用DIV+CSS布局一个完整的网站首页</h3><p>本节主要是完成一个网站首页面的布局演示，使用DIV+CSS标准网页布局的方式，课程中一边演示页面布局一边讲解HTML标记和CSS的使用， 同时解决页面的兼容性问题。重点讲解DIV+CSS布局的思想。</p>
+<h3 id="HTML5的技术应用"><a href="#HTML5的技术应用" class="headerlink" title="HTML5的技术应用"></a>HTML5的技术应用</h3><p>本节介绍HTML4他HTML5的发展过程，及区别。HTML5现在在互联网中的应用，HTML5在语法中的改变， 讲解了HTML5中新增的语言标记、表单标记， HTML5中新增的属性和删除的属性， HTML中删除的标记， 重点讲解了HTML5中的语义标记和新增的表单标记及一些重要的属性！</p>
+<h3 id="CSS3的技术应用"><a href="#CSS3的技术应用" class="headerlink" title="CSS3的技术应用"></a>CSS3的技术应用</h3><p>本节讲解了CSS3的功能介绍， CSS3中新增的各种选择器，重点讲解了CSS3中一些常用的属性， 像圆角、阴影、动画、多背景、旋转等。本节的另一个重点是讲解CSS3在各浏览器中的兼容性的介绍。在本节中也通过HTML5中的语义标记和CSS3完成HTML5+CSS3页面的布局。</p>
+<h3 id="响应式页面布局"><a href="#响应式页面布局" class="headerlink" title="响应式页面布局"></a>响应式页面布局</h3><p>本节介绍了响应式的布局的方法， 和什么类型的网站适合使用响应式布局， 以及响应式布局的优点和缺点。响应式布局如何设置， media queries模块， 本节用media技术通过实验详细演示了一个适合PC、PAD和PHONE的网站响应式布局。</p>
+<h3 id="media查询的详细应用"><a href="#media查询的详细应用" class="headerlink" title="media查询的详细应用"></a>media查询的详细应用</h3><p>本节讲解了media的详细应用， 包括各种语法， 几种的应用结构， 可用的设备特性参数， 在移动设备上设置原始大小、图片和字体的响应式设计。本节还讲解了响应式网站的设计流程。</p>
+<h3 id="bootstarp的技术应用"><a href="#bootstarp的技术应用" class="headerlink" title="bootstarp的技术应用"></a>bootstarp的技术应用</h3><p>本节介绍了简洁直观强悍的前端开发框架， 让web开发更迅速、简单。本节的主要内容包括bootstrap现在在网站开发中的应用。bootstrap的安装， 如何使用bootstrap手册， 兼容性的解决方案， 响应式布局的使用方法， 重点介绍了bootstrap的栅格布局方案，通过实验演示完成页面的布</p>
+<h3 id="bootstarp的高级应用"><a href="#bootstarp的高级应用" class="headerlink" title="bootstarp的高级应用"></a>bootstarp的高级应用</h3><p>本节主要介绍了bootstarp各种库的应用及演示，包括字体、 页面主体内容设置，文本设置、列表及描述、bootstarp表格的应用、各种按钮、表单的应用、 浮动等， 重点介绍了bootstarp提供的强大的组件库， 包括字体库， 下拉菜单， 主导航、进度条、弹窗等。</p>
+<h3 id="PHPCMS模板引擎语法"><a href="#PHPCMS模板引擎语法" class="headerlink" title="PHPCMS模板引擎语法"></a>PHPCMS模板引擎语法</h3><p>本节介绍了模板引擎的工作原理， PHPCMS的模析引擎的目录结构， PHPCMS的模板文件的位置， PHPCMS的各种模板文件的结构， PHPCMS的模板引擎的加载设置， 创建一套新的PHPCMS模板， 重点介绍了PHPCMS的模板语法， 包括常量， 变量访问， PHPCMS的系统函数应用。</p>
+<h3 id="PHPCMS的模板编写"><a href="#PHPCMS的模板编写" class="headerlink" title="PHPCMS的模板编写"></a>PHPCMS的模板编写</h3><p>本节讲解了在模板中应用流程控制语句，包括if和loop，模板包含的使用。本节重点介绍了PC标签的使用，包括内容模块，评论模块、公告模块，专题模块， 友情链接模块， 黄页模块， 和工具箱的使用及碎片管理。</p>
+<h3 id="开发一个完整的PHPCMS网站首页面模板"><a href="#开发一个完整的PHPCMS网站首页面模板" class="headerlink" title="开发一个完整的PHPCMS网站首页面模板"></a>开发一个完整的PHPCMS网站首页面模板</h3><p>本节讲解了PHPCMS模板的安装， 模板的切换， 重点讲解了使用bootstrap开发的响应式布局的模板结构。不仅完成来页面的开发， 同时也结合PHPCMS的模块技术，将页面中的数据通过PHPCMS进行动态的管理。</p>
+<h3 id="开发PHPCMS其它页面模板"><a href="#开发PHPCMS其它页面模板" class="headerlink" title="开发PHPCMS其它页面模板"></a>开发PHPCMS其它页面模板</h3><p>本节讲解PHPCMS的各个页面的开发过程， 包括频道页面， 列表页面和内容页面的编写和代码分析， 也包括单页面的设置和编写， 都采用bootstrap技术开发实现， 完成响应式的网站模板。</p>
+<h3 id="PHP的基本语法"><a href="#PHP的基本语法" class="headerlink" title="PHP的基本语法"></a>PHP的基本语法</h3><p>本节介绍PHPCMS开发需要用到的PHP基本语法， 重点是面向对象相关的PHP语法，本节包括PHP的基语法结构， 面向对象的技术， 什么是是面向对象， 面向过程和面向对象开发思想的对比， 什么是类？，类和对象的关系， 重点是如何声明一个类，以及面向对象的特性！</p>
+<h3 id="PHPCMS的框架语法结构"><a href="#PHPCMS的框架语法结构" class="headerlink" title="PHPCMS的框架语法结构"></a>PHPCMS的框架语法结构</h3><p>本节讲解了MVC设置模式，什么是模块，什么是操作，主入口文件的结构。PHPCMS的模块结构，包括如何设置主入口文件， 如何写控制器，如何写操作。</p>
+<h3 id="自定义PHPCMS一个功能模块"><a href="#自定义PHPCMS一个功能模块" class="headerlink" title="自定义PHPCMS一个功能模块"></a>自定义PHPCMS一个功能模块</h3><p>PHPCMS功能模块的目录结构，讲解如何为PHPCMS添加一个功能模块， 从前后台主入口文件、控制器文件开始，包括模块中每个操作的编写， 自己开发功能模块如何和PHPCMS结合，前后前控制器编写的方法和注意事项， 重点讲解了如何在自己模块中调用PHPCMS系统库的资源。</p>
+<h3 id="自定义PHPCMS模块的详细操作"><a href="#自定义PHPCMS模块的详细操作" class="headerlink" title="自定义PHPCMS模块的详细操作"></a>自定义PHPCMS模块的详细操作</h3><p>本节讲解PHPCMS中如何自定义后台菜单管理， 重点讲解如何在PHPCMS功能模块中加载前后的模板，及前后台模板的区别， 在模块中调用系统资源。也讲解了语言包以及如何让自定义的后台模板和原有后台模板风格一致。</p>
+<h3 id="为PHPCMS增完一个完整的功能模块"><a href="#为PHPCMS增完一个完整的功能模块" class="headerlink" title="为PHPCMS增完一个完整的功能模块"></a>为PHPCMS增完一个完整的功能模块</h3><p>包括设置目录结构、后台模块添加菜单、后台模块的权限管理，后台的模板管理，后台的数据表结构、数据model的编写， 各种类之间的继承结构关系等，完全采用编写方式代码演示， 本节重点介绍了数据库模型操作，包括数据库连接应用及表操作！</p>
+<h3 id="自定义PHPCMS模块的完整流程实现"><a href="#自定义PHPCMS模块的完整流程实现" class="headerlink" title="自定义PHPCMS模块的完整流程实现"></a>自定义PHPCMS模块的完整流程实现</h3><p>本节主要编写一个模块的业务流程，包括模块的编写，控制器、模型和视频的组合。以及一些PHPCMS的JS插件的应用、PHPCMS通用的表单验证编写。通过代码编写演示完成一个功能模块的全部功能。</p>
+<h3 id="PHPCMS的二次开发技巧和PHPSSO的框架应用"><a href="#PHPCMS的二次开发技巧和PHPSSO的框架应用" class="headerlink" title="PHPCMS的二次开发技巧和PHPSSO的框架应用"></a>PHPCMS的二次开发技巧和PHPSSO的框架应用</h3><p>本节介绍PHPCMS的一些扩展技巧，包括如何为原有模块进行功能扩展，使用继承的方法不会影响系统升级， 讲解PHPCMS的PHPSSO_Server系统结构，来学习PHPCMS的框架应用。 重点讲解了PHPSSO的配置和工作原理，数据库的连接配置， 并且通过编写实例代码演示了PHPSSO的开发过程。</p>
+<h3 id="PHPCMS的实用技能"><a href="#PHPCMS的实用技能" class="headerlink" title="PHPCMS的实用技能"></a>PHPCMS的实用技能</h3><p>本节主要讲解PHPSSO的模块操作、系统常用的类库的操作， 还讲解PHPCMS开发的网站迁移，以及一些PHPCMS常用问题的解决方案！</p>
+<h3 id="PHPCMS和其它网站资源的整合及PHPCMS优化设置"><a href="#PHPCMS和其它网站资源的整合及PHPCMS优化设置" class="headerlink" title="PHPCMS和其它网站资源的整合及PHPCMS优化设置"></a>PHPCMS和其它网站资源的整合及PHPCMS优化设置</h3><p>本节重点介绍了PHPCMS和Discuz通过ucenter和phpsso进行整合，并讲解了如可在PHPCMS中调用DZ中的数据， 本节也讲解了PHPCMS页面静态化，演示了URL重写， 还讲解了主程序和Web目录分离，以及一些sphinx全文索引的介绍，本节的最后也介绍了一下Ajax的技术！</p>
+<h3 id="PHPCMS和其它网站资源的整合及PHPCMS优化设置-1"><a href="#PHPCMS和其它网站资源的整合及PHPCMS优化设置-1" class="headerlink" title="PHPCMS和其它网站资源的整合及PHPCMS优化设置"></a>PHPCMS和其它网站资源的整合及PHPCMS优化设置</h3><p>本节重点介绍了PHPCMS和Discuz通过ucenter和phpsso进行整合，并讲解了如可在PHPCMS中调用DZ中的数据， 本节也讲解了PHPCMS页面静态化，演示了URL重写， 还讲解了主程序和Web目录分离，以及一些sphinx全文索引的介绍，本节的最后也介绍了一下Ajax的技术！</p>
+<h2 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h2><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：</p>
+<p><a href="https://itvideos.github.io/categories/" target="_blank" rel="noopener">教程分类说明</a>：<a href="https://itvideos.github.io/categories/" target="_blank" rel="noopener">https://itvideos.github.io/categories/</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p><a href="https://itvideos.github.io/about/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="JackChan(QQ2434276084) 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="JackChan(QQ2434276084) 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Phpcms/" rel="tag"># Phpcms</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/18/后端开发/Java/深入浅出Netty源码剖析/" rel="next" title="深入浅出Netty源码剖析">
+                <i class="fa fa-chevron-left"></i> 深入浅出Netty源码剖析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/18/后端开发/Java/深入JVM内核/" rel="prev" title="深入JVM内核—原理、诊断与优化">
+                深入JVM内核—原理、诊断与优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/allen.jpg"
+                alt="JackChan(QQ2434276084)" />
+            
+              <p class="site-author-name" itemprop="name">JackChan(QQ2434276084)</p>
+              <p class="site-description motion-element" itemprop="description">远方除了远，一无是处！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程介绍"><span class="nav-number">1.</span> <span class="nav-text">课程介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#课程目录"><span class="nav-number">2.</span> <span class="nav-text">课程目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPCMS的安装及操作"><span class="nav-number">2.1.</span> <span class="nav-text">PHPCMS的安装及操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公众号后台的基本操作"><span class="nav-number">2.2.</span> <span class="nav-text">公众号后台的基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML和CSS基本语法、DIV-CSS页面布局"><span class="nav-number">2.3.</span> <span class="nav-text">HTML和CSS基本语法、DIV+CSS页面布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用DIV-CSS布局一个完整的网站首页"><span class="nav-number">2.4.</span> <span class="nav-text">使用DIV+CSS布局一个完整的网站首页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5的技术应用"><span class="nav-number">2.5.</span> <span class="nav-text">HTML5的技术应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3的技术应用"><span class="nav-number">2.6.</span> <span class="nav-text">CSS3的技术应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式页面布局"><span class="nav-number">2.7.</span> <span class="nav-text">响应式页面布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#media查询的详细应用"><span class="nav-number">2.8.</span> <span class="nav-text">media查询的详细应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bootstarp的技术应用"><span class="nav-number">2.9.</span> <span class="nav-text">bootstarp的技术应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bootstarp的高级应用"><span class="nav-number">2.10.</span> <span class="nav-text">bootstarp的高级应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPCMS模板引擎语法"><span class="nav-number">2.11.</span> <span class="nav-text">PHPCMS模板引擎语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPCMS的模板编写"><span class="nav-number">2.12.</span> <span class="nav-text">PHPCMS的模板编写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发一个完整的PHPCMS网站首页面模板"><span class="nav-number">2.13.</span> <span class="nav-text">开发一个完整的PHPCMS网站首页面模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发PHPCMS其它页面模板"><span class="nav-number">2.14.</span> <span class="nav-text">开发PHPCMS其它页面模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP的基本语法"><span class="nav-number">2.15.</span> <span class="nav-text">PHP的基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPCMS的框架语法结构"><span class="nav-number">2.16.</span> <span class="nav-text">PHPCMS的框架语法结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义PHPCMS一个功能模块"><span class="nav-number">2.17.</span> <span class="nav-text">自定义PHPCMS一个功能模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义PHPCMS模块的详细操作"><span class="nav-number">2.18.</span> <span class="nav-text">自定义PHPCMS模块的详细操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为PHPCMS增完一个完整的功能模块"><span class="nav-number">2.19.</span> <span class="nav-text">为PHPCMS增完一个完整的功能模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义PHPCMS模块的完整流程实现"><span class="nav-number">2.20.</span> <span class="nav-text">自定义PHPCMS模块的完整流程实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPCMS的二次开发技巧和PHPSSO的框架应用"><span class="nav-number">2.21.</span> <span class="nav-text">PHPCMS的二次开发技巧和PHPSSO的框架应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPCMS的实用技能"><span class="nav-number">2.22.</span> <span class="nav-text">PHPCMS的实用技能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPCMS和其它网站资源的整合及PHPCMS优化设置"><span class="nav-number">2.23.</span> <span class="nav-text">PHPCMS和其它网站资源的整合及PHPCMS优化设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPCMS和其它网站资源的整合及PHPCMS优化设置-1"><span class="nav-number">2.24.</span> <span class="nav-text">PHPCMS和其它网站资源的整合及PHPCMS优化设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多教程"><span class="nav-number">3.</span> <span class="nav-text">更多教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取方式"><span class="nav-number">4.</span> <span class="nav-text">获取方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackChan(QQ2434276084)</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("N85VKE1O3YBok6Gmhxyq2zYR-gzGzoHsz", "jDziCU2LPGftl1fXWbb1xfG6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

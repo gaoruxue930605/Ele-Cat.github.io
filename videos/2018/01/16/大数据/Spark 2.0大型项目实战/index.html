@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Spark 2.0大型项目实战," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="课程介绍 本项目主要讲解了一套应用于互联网电商企业中，使用Java、Spark等技术开发的大数据统计分析平台，对电商网站的各种用户行为（访问行为、页面跳转行为、购物行为、广告点击行为等）进行复杂的分析。用统计分析出来的数据，辅助公司中的PM（产品经理）、数据分析师以及管理人员分析现有产品的情况，并根据用户行为分析结果持续改进产品的设计，以及调整公司的战略和业务。最终达到用大数据技术来帮助提升公司的">
+<meta name="keywords" content="Spark 2.0大型项目实战">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spark 2.0大型项目实战：移动电商App交互式数据分析平台">
+<meta property="og:url" content="git@github.com:ItVideos/ItVideos.github.io.git/2018/01/16/大数据/Spark 2.0大型项目实战/index.html">
+<meta property="og:site_name" content="JustDoIt">
+<meta property="og:description" content="课程介绍 本项目主要讲解了一套应用于互联网电商企业中，使用Java、Spark等技术开发的大数据统计分析平台，对电商网站的各种用户行为（访问行为、页面跳转行为、购物行为、广告点击行为等）进行复杂的分析。用统计分析出来的数据，辅助公司中的PM（产品经理）、数据分析师以及管理人员分析现有产品的情况，并根据用户行为分析结果持续改进产品的设计，以及调整公司的战略和业务。最终达到用大数据技术来帮助提升公司的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.ibeifeng.com/images/201610/source_img/582_G_1477639195635.jpg">
+<meta property="og:updated_time" content="2018-01-17T04:53:38.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spark 2.0大型项目实战：移动电商App交互式数据分析平台">
+<meta name="twitter:description" content="课程介绍 本项目主要讲解了一套应用于互联网电商企业中，使用Java、Spark等技术开发的大数据统计分析平台，对电商网站的各种用户行为（访问行为、页面跳转行为、购物行为、广告点击行为等）进行复杂的分析。用统计分析出来的数据，辅助公司中的PM（产品经理）、数据分析师以及管理人员分析现有产品的情况，并根据用户行为分析结果持续改进产品的设计，以及调整公司的战略和业务。最终达到用大数据技术来帮助提升公司的">
+<meta name="twitter:image" content="http://www.ibeifeng.com/images/201610/source_img/582_G_1477639195635.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="git@github.com:ItVideos/ItVideos.github.io.git/2018/01/16/大数据/Spark 2.0大型项目实战/"/>
+
+
+
+
+
+  <title>Spark 2.0大型项目实战：移动电商App交互式数据分析平台 | JustDoIt</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JustDoIt</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">IT视频教程资源站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="git@github.com:ItVideos/ItVideos.github.io.git/2018/01/16/大数据/Spark 2.0大型项目实战/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JackChan(QQ2434276084)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/allen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JustDoIt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spark 2.0大型项目实战：移动电商App交互式数据分析平台</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T21:31:53+08:00">
+                2018-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/16/大数据/Spark 2.0大型项目实战/" class="leancloud_visitors" data-flag-title="Spark 2.0大型项目实战：移动电商App交互式数据分析平台">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h2><p><img src="http://www.ibeifeng.com/images/201610/source_img/582_G_1477639195635.jpg" alt=""></p>
+<p>本项目主要讲解了一套应用于互联网电商企业中，使用Java、Spark等技术开发的大数据统计分析平台，对电商网站的各种用户行为（访问行为、页面跳转行为、购物行为、广告点击行为等）进行复杂的分析。用统计分析出来的数据，辅助公司中的PM（产品经理）、数据分析师以及管理人员分析现有产品的情况，并根据用户行为分析结果持续改进产品的设计，以及调整公司的战略和业务。最终达到用大数据技术来帮助提升公司的业绩、营业额以及市场占有率的目标。</p>
+<a id="more"></a>
+<h2 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h2><p>项目主要采用目前大数据领域流行、热门的技术——Spark，具有普通项目无法比拟的技术前瞻性与尖端性。本项目使用了Spark技术生态栈中常用的三个技术框架，Spark Core、Spark SQL和Spark Streaming，进行离线计算和实时计算业务模块的开发。实现了包括用户访问session分析、页面单跳转化率统计、热门商品离线统计、广告点击流量实时统计4个业务模块。</p>
+<p>项目中所有的业务功能模块都是直接从实际企业项目中抽取出来的，业务复杂度绝对没有任何缩水，只是为了更好的贴近大数据实战课程的需要，进行了一定程度上的技术整合和业务整合。该项目的真实性、业务复杂性以及实战型，绝对不是市面上现有的仅几个课时的Demo级的大数据项目可以比拟的。</p>
+<p>通过合理的将实际业务模块进行技术整合与改造，该项目完全涵盖了Spark Core、Spark SQL和Spark Streaming这三个技术框架中几乎所有的功能点、知识点以及性能优化点。仅一个项目，即可全面掌握Spark技术在实际项目中如何实现各种类型的业务需求！在项目中，重点讲解了实际企业项目中积累下来的宝贵的性能调优、troubleshooting以及数据倾斜解决方案等知识和技术，是任何其他视频课程以及书本中都没有包含的珍贵经验积累！同时以企业级大数据项目开发流程贯穿每个业务模块的讲解，涵盖了项目开发全流程，包括需求分析、方案设计、数据设计、编码实现、测试以及性能调优等环节，全面还原真实大数据项目的开发流程。该项目的整体商业价值绝对在百万元以上！</p>
+<p>学习完本课程之后，可以大幅度提升学员的Spark技术能力、实战开发能力、项目经验、性能调优和troubleshooting经验。如果学员已经学习过《Spark从入门到精通（Scala编程、案例实战、高级特性、Spark内核源码剖析、Hadoop高端）》课程，再学习完本课程，则完全可以达到2~3年左右Spark大数据开发经验的水平，正式迈入Spark高级开发工程师的行列！在跳槽或者面试的时候，精湛的Spark技术以及复杂的Spark大数据项目的经验，足以让你应付国内任何公司的面试（包括BAT等顶级互联网公司的面试难度），从而让学员通过学习掌握自己的人生！</p>
+<p>在此特别强调，本课程的学习要求有Java基础、Hadoop基础，如果学员没有相关基础，请先自学相关知识。本课程要求学员有扎实的Spark技术基础，如果没有，则推荐学习北风网的《Spark从入门到精通（Scala编程、案例实战、高级特性、Spark内核源码剖析、Hadoop高端）》课程（<a href="http://www.ibeifeng.com/goods-560.html）。" target="_blank" rel="noopener">http://www.ibeifeng.com/goods-560.html）。</a></p>
+<p>备注一：关于《Spark从入门到精通（Scala编程、案例实战、高级特性、Spark内核源码剖析、Hadoop高端）》与本套课程的关系，如果学习了第一套Spark技术课程，那么在融会贯通的情况下，可以达到1~2年Spark开发经验的水平；如果在学习完第一套Spark课程，同时学习完第二套Spark项目课程，并且融会贯通的情况下，那么可以达到2~3年的Spark开发经验的水平，成为Spark高级/资深开发工程师。</p>
+<p>备注二：考虑到学员不统一的技术基础，因此本项目仅仅要求J2SE基础，也就是Java基础编程即可，不要求J2EE，而且也不使用任何Java框架，不涉及与第三方技术整合。主要就是为了降低课程的学习门槛。本课程不会讲解J2EE层的开发，只是讲解Spark如何与J2EE结合使用，组成交互式大数据平台的架构。因此唯一的要求仅仅是Java编程基础以及Spark扎实的技术即可学习课程。</p>
+<p>备注三：关于课程开发语言的选择，本套课程选择使用Java，而不是Scala，作为编程语言；原因主要是因为在开发大型、复杂的大数据业务系统或平台时，Java的优势是Scala所不可比拟的；在真正大型复杂的项目中，可能Spark需要管理大量的组件，此时可能需要用Spring框架；可能需要执行复杂的数据库操作，此时需要ORM类框架，比如MyBatis；可能需要与Redis、Kafka、ZooKeeper整合使用，此时需要使用Java Client API；以上需求都是Scala满足不了的。使用Scala很可能会导致项目的多语言混编，造成可维护性和可扩展性大幅度降低。（注意，本套项目课程为了降低学习难度，并且聚焦在Spark上，没有使用以上任何技术，只是用纯粹的Java基础编程与Spark技术；但是这并不意味着你在真正的工作中不会碰到上述的情况）</p>
+<h2 id="本课程的最大特色"><a href="#本课程的最大特色" class="headerlink" title="本课程的最大特色"></a>本课程的最大特色</h2><p>1、高端大数据项目：市面上目前完全没有任何高端的大数据项目实战类课程，更没有Spark大数据项目实战类课程，本课程是企业级大型Spark大数据实战项目课程！</p>
+<p>2、企业级大数据项目的架构搭建：配置管理组件、JDBC辅助组件（内置数据库连接池）、Domain与DAO模型等等，完全正规的大型大数据项目架构！</p>
+<p>3、交互式大数据分析平台架构：本项目的原型不是普通的定时调度离线统计任务的大数据项目；而是Spark与J2EE系统结合构成的交互式大数据分析平台，项目中的Spark开发都是按该架构来讲解的！</p>
+<p>4、真实还原完整的企业级大数据项目开发流程：项目中采用完全还原企业大数据项目开发场景的方式来讲解，每一个业务模块的讲解都包括了数据分析、需求分析、方案设计、数据库设计、编码实现、功能测试、性能调优、troubleshooting与解决数据倾斜（后期运维）等环节，真实还原企业级大数据项目开发场景。让学员掌握真实大数据项目的开发流程和经验！</p>
+<p>5、技术点覆盖广：一套项目课程，全面涵盖了至少90%以上的Spark Core、Spark SQL和Spark Streaming的几乎所有的初、中、高级技术点；通过本项目课程的学习，可以全面锻炼了学员的Spark大数据项目实战能力，将技术与项目融会贯通，彻底精通Spark实战开发！</p>
+<p>6、真实的性能调优方案与troubleshooting经验：项目中通过实际的功能模块和业务场景，以及讲师曾经开发过的处理十亿、甚至百亿以上数据级别的Spark作业的经验积累，贯穿讲解了大量的高级复杂的性能调优技术和知识、troubleshooting解决线上报错和故障的经验。真正帮助学员掌握企业实际项目中使用的高精尖Spark技术！</p>
+<p>7、高端的数据倾斜解决方案：本课程讲解了高端而且宝贵的，大量实际项目中积累的——数据倾斜全套解决方案！包括数据倾斜问题的判断、诊断与定位，以及一整套7种针对各种不同类型数据倾斜的解决方案，彻底帮助学员解决企业项目中最棘手的数据倾斜问题，称为企业中最核心的技术人才！</p>
+<p>8、业务功能极其复杂：项目中的四个功能模块，全部是实际企业项目中提取出来的，并进行技术整合和改良过的功能模块，包含了比实际项目中更多、更全面的技术点。所有模块的需求，全部是企业级的复杂和真实的需求，业务模块非常之复杂，绝对不是市面上的Demo级别的大数据项目能够想比拟的。学习过后，真正帮助学员增加实际企业级项目的实战经验！</p>
+<p>9、大量高端技术：自定义Accumulator、按时间比例随机抽取算法、二次排序、分组取topN、页面切片生成以及页面流匹配算法、Hive与MySQL异构数据源、RDD转换为DataFrame、注册和使用临时表、自定义UDAF聚合函数（group_concat_distinct）、自定义get_json_object等普通函数、Spark SQL的高级内置函数（if与case when等）、开窗函数（ROW_NUMBER）、动态黑名单机制、transform、updateStateByKey、transform与Spark SQL整合、window滑动窗口、高性能写数据库，等等。</p>
+<p>10、行业经验穿插介绍：贯穿了大量讲师在大数据行业内的从业经验以及所见所闻，帮助学员丰富行业阅历。</p>
+<p>11、高端源代码：赠送完整spark大型大数据项目的商业级别的源代码，价值上百万；稍加改造，二次开发，甚至可以直接用于你的企业的大数据行为分析。</p>
+<p>12、现场Excel手工画图与写笔记：所有复杂业务流程、架构原理、Spark技术原理、业务需求分析、技术实现方案等知识的讲解，采用Excel画图或者写详细比较的方式进行讲解与分析，细致入微、形象地透彻剖析理论知识，帮助学员更好的理解、记忆与复习巩固。</p>
+<h2 id="Spark-2-0实战升级！"><a href="#Spark-2-0实战升级！" class="headerlink" title="Spark 2.0实战升级！"></a>Spark 2.0实战升级！</h2><p>本次课程升级，主要是为了保证课程跟上Spark的最新技术发展趋势。目前Spark已经发展到2.0版本，未来Spark的主要开发接口将以Dataset API为主，原先的RDD API将作为底层API退居二线。但是这并不意味着之前的内容就过时了，实际上对于一些性能要求和稳定性要求极高，需要工程师对Spark进行最底层把控的时候，Spark官方也是建议，还是应该使用RDD API的，因为可以对所有的底层参数进行深度的把控，同时系统报错的时候，可以直接定位最原始的源码进行问题排查和修复。Dataset API会作为一种更加高层次的、易用的API，来在合适的场景下，提高我们的开发效率。但是Dataset API的缺点在于其被高度封装，底层会自动生成大量代码和优化，导致我们几乎无法对其进行太多的优化，出现问题时非常难以排查。因此Spark 2.0，并不意味着任何已有的技术淘汰，也不意味着任何新的技术是万能的，需要我们灵活根据业务场景选择对应的技术。</p>
+<p>本次课程赠送了《Spark 2.0从入门到精通》课程的部分内容，主要是照顾到没有购买过《Spark 2.0从入门到精通》的同学，可以初步地了解Spark 2.0的新特性以及核心思想。此外，最重要的是增加了基于Spark Dataset 2.0开发的一个功能模块：用户活跃度分析模块。该模块可以让产品经理或运营人员了解到企业在各种条件和场景下，最活跃的那些用户是哪些，并进一步分析他们的访问行为轨迹，进而为自己优化产品设计，或者调整运营策略，提供数据上的决策依据。该模块基本涵盖了Spark Dataset 2.0的核心功能和API，掌握该模块的开发，基本上运用Spark Dataset进行项目开发，问题就不大了。</p>
+<p>此外，本次课程全部使用纯Scala语言进行项目开发，也是对本套课程的一个有力的弥补。</p>
+<h2 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h2><h3 id="大数据集群搭建"><a href="#大数据集群搭建" class="headerlink" title="大数据集群搭建"></a>大数据集群搭建</h3><p>第1讲-课程介绍</p>
+<p>第2讲-课程环境搭建：CentOS 6.4集群搭建</p>
+<p>第3讲-课程环境搭建：hadoop-2.5.0-cdh5.3.6集群搭建</p>
+<p>第4讲-课程环境搭建：hive-0.13.1-cdh5.3.6安装</p>
+<p>第5讲-课程环境搭建：zookeeper-3.4.5-cdh5.3.6集群搭建</p>
+<p>第6讲-课程环境搭建：kafka_2.9.2-0.8.1集群搭建</p>
+<p>第7讲-课程环境搭建：flume-ng-1.5.0-cdh5.3.6安装</p>
+<p>第8讲-课程环境搭建：离线日志采集流程介绍</p>
+<p>第9讲-课程环境搭建：实时数据采集流程介绍</p>
+<p>第10讲-课程环境搭建：Spark 1.5.1客户端安装以及基于YARN的提交模式</p>
+<h3 id="用户访问session分析："><a href="#用户访问session分析：" class="headerlink" title="用户访问session分析："></a>用户访问session分析：</h3><p>第11讲-用户访问session分析：模块介绍</p>
+<p>第12讲-用户访问session分析：基础数据结构以及大数据平台架构介绍</p>
+<p>第13讲-用户访问session分析：需求分析</p>
+<p>第14讲-用户访问session分析：技术方案设计</p>
+<p>第15讲-用户访问session分析：数据表设计</p>
+<p>第16讲-用户访问session分析：Eclipse工程搭建以及工具类说明</p>
+<p>第17讲-用户访问session分析：开发配置管理组件</p>
+<p>第18讲-用户访问session分析：JDBC原理介绍以及增删改查示范</p>
+<p>第19讲-用户访问session分析：数据库连接池原理</p>
+<p>第20讲-用户访问session分析：单例设计模式</p>
+<p>第21讲-用户访问session分析：内部类以及匿名内部类</p>
+<p>第22讲-用户访问session分析：开发JDBC辅助组件（上）</p>
+<p>第23讲-用户访问session分析：开发JDBC辅助组件（下）</p>
+<p>第24讲-用户访问session分析：JavaBean概念讲解</p>
+<p>第25讲-用户访问session分析：DAO模式讲解以及TaskDAO开发</p>
+<p>第26讲-用户访问session分析：工厂模式讲解以及DAOFactory开发</p>
+<p>第27讲-用户访问session分析：JSON数据格式讲解以及fastjson介绍</p>
+<p>第28讲-用户访问session分析：Spark上下文构建以及模拟数据生成</p>
+<p>第29讲-用户访问session分析：按session粒度进行数据聚合</p>
+<p>第30讲-用户访问session分析：按筛选参数对session粒度聚合数据进行过滤</p>
+<p>第31讲-用户访问session分析：session聚合统计之自定义Accumulator</p>
+<p>第32讲-用户访问session分析：session聚合统计之重构实现思路与重构session聚合</p>
+<p>第33讲-用户访问session分析：session聚合统计之重构过滤进行统计</p>
+<p>第34讲-用户访问session分析：session聚合统计之计算统计结果并写入MySQL</p>
+<p>第35讲-用户访问session分析：session聚合统计之本地测试</p>
+<p>第36讲-用户访问session分析：session聚合统计之使用Scala实现自定义Accumulator</p>
+<p>第37讲-用户访问session分析：session随机抽取之实现思路分析</p>
+<p>第38讲-用户访问session分析：session随机抽取之计算每天每小时session数量</p>
+<p>第39讲-用户访问session分析：session随机抽取之按时间比例随机抽取算法实现</p>
+<p>第40讲-用户访问session分析：session随机抽取之根据随机索引进行抽取</p>
+<p>第41讲-用户访问session分析：session随机抽取之获取抽取session的明细数据</p>
+<p>第42讲-用户访问session分析：session随机抽取之本地测试</p>
+<p>第43讲-用户访问session分析：top10热门品类之需求回顾以及实现思路分析</p>
+<p>第44讲-用户访问session分析：top10热门品类之获取session访问过的所有品类</p>
+<p>第45讲-用户访问session分析：top10热门品类之计算各品类点击、下单和支付的次数</p>
+<p>第46讲-用户访问session分析：top10热门品类之join品类与点击下单支付次数</p>
+<p>第47讲-用户访问session分析：top10热门品类之自定义二次排序key</p>
+<p>第48讲-用户访问session分析：top10热门品类之进行二次排序</p>
+<p>第49讲-用户访问session分析：top10热门品类之获取top10品类并写入MySQL</p>
+<p>第50讲-用户访问session分析：top10热门品类之本地测试</p>
+<p>第51讲-用户访问session分析：top10热门品类之使用Scala实现二次排序</p>
+<p>第52讲-用户访问session分析：top10活跃session之开发准备以及top10品类RDD生成</p>
+<p>第53讲-用户访问session分析：top10活跃session之计算top10品类被各sessoin点击的次数</p>
+<p>第54讲-用户访问session分析：top10活跃session之分组取TopN算法获取top10活跃session</p>
+<p>第55讲-用户访问session分析：top10活跃session之本地测试以及阶段总结</p>
+<h3 id="企业级性能调优、troubleshooting经验与数据倾斜解决方案："><a href="#企业级性能调优、troubleshooting经验与数据倾斜解决方案：" class="headerlink" title="企业级性能调优、troubleshooting经验与数据倾斜解决方案："></a>企业级性能调优、troubleshooting经验与数据倾斜解决方案：</h3><p>第56讲-用户访问session分析：性能调优之在实际项目中分配更多资源</p>
+<p>第57讲-用户访问session分析：性能调优之在实际项目中调节并行度</p>
+<p>第58讲-用户访问session分析：性能调优之在实际项目中重构RDD架构以及RDD持久化</p>
+<p>第59讲-用户访问session分析：性能调优之在实际项目中广播大变量</p>
+<p>第60讲-用户访问session分析：性能调优之在实际项目中使用Kryo序列化</p>
+<p>第61讲-用户访问session分析：性能调优之在实际项目中使用fastutil优化数据格式</p>
+<p>第62讲-用户访问session分析：性能调优之在实际项目中调节数据本地化等待时长</p>
+<p>第63讲-用户访问session分析：JVM调优之原理概述以及降低cache操作的内存占比</p>
+<p>第64讲-用户访问session分析：JVM调优之调节executor堆外内存与连接等待时长</p>
+<p>第65讲-用户访问session分析：Shuffle调优之原理概述</p>
+<p>第66讲-用户访问session分析：Shuffle调优之合并map端输出文件</p>
+<p>第67讲-用户访问session分析：Shuffle调优之调节map端内存缓冲与reduce端内存占比</p>
+<p>第68讲-用户访问session分析：Shuffle调优之HashShuffleManager与SortShuffleManager</p>
+<p>第69讲-用户访问session分析：算子调优之MapPartitions提升Map类操作性能</p>
+<p>第70讲-用户访问session分析：算子调优之filter过后使用coalesce减少分区数量</p>
+<p>第71讲-用户访问session分析：算子调优之使用foreachPartition优化写数据库性能</p>
+<p>第72讲-用户访问session分析：算子调优之使用repartition解决Spark SQL低并行度的性能问题</p>
+<p>第73讲-用户访问session分析：算子调优之reduceByKey本地聚合介绍</p>
+<p>第74讲-用户访问session分析：troubleshooting之控制shuffle reduce端缓冲大小以避免OOM</p>
+<p>第75讲-用户访问session分析：troubleshooting之解决JVM GC导致的shuffle文件拉取失败</p>
+<p>第76讲-用户访问session分析：troubleshooting之解决YARN队列资源不足导致的application直接失败</p>
+<p>第77讲-用户访问session分析：troubleshooting之解决各种序列化导致的报错</p>
+<p>第78讲-用户访问session分析：troubleshooting之解决算子函数返回NULL导致的问题</p>
+<p>第79讲-用户访问session分析：troubleshooting之解决yarn-client模式导致的网卡流量激增问题</p>
+<p>第80讲-用户访问session分析：troubleshooting之解决yarn-cluster模式的JVM栈内存溢出问题</p>
+<p>第81讲-用户访问session分析：troubleshooting之错误的持久化方式以及checkpoint的使用</p>
+<p>第82讲-用户访问session分析：数据倾斜解决方案之原理以及现象分析</p>
+<p>第83讲-用户访问session分析：数据倾斜解决方案之聚合源数据以及过滤导致倾斜的key</p>
+<p>第84讲-用户访问session分析：数据倾斜解决方案之提高shuffle操作reduce并行度</p>
+<p>第85讲-用户访问session分析：数据倾斜解决方案之使用随机key实现双重聚合</p>
+<p>第86讲-用户访问session分析：数据倾斜解决方案之将reduce join转换为map join</p>
+<p>第87讲-用户访问session分析：数据倾斜解决方案之sample采样倾斜key单独进行join</p>
+<p>第88讲-用户访问session分析：数据倾斜解决方案之使用随机数以及扩容表进行join</p>
+<h3 id="页面单跳转化率统计："><a href="#页面单跳转化率统计：" class="headerlink" title="页面单跳转化率统计："></a>页面单跳转化率统计：</h3><p>第89讲-页面单跳转化率：模块介绍</p>
+<p>第90讲-页面单跳转化率：需求分析、技术方案设计、数据表设计</p>
+<p>第91讲-页面单跳转化率：编写基础代码</p>
+<p>第92讲-页面单跳转化率：页面切片生成以及页面流匹配算法实现</p>
+<p>第93讲-页面单跳转化率：计算页面流起始页面的pv</p>
+<p>第94讲-页面单跳转化率：计算页面切片的转化率</p>
+<p>第95讲-页面单跳转化率：将页面切片转化率写入MySQL</p>
+<p>第96讲-页面单跳转化率：本地测试</p>
+<p>第97讲-页面单跳转化率：生产环境测试</p>
+<p>第98讲-用户访问session分析：生产环境测试</p>
+<h3 id="各区域热门商品统计："><a href="#各区域热门商品统计：" class="headerlink" title="各区域热门商品统计："></a>各区域热门商品统计：</h3><p>第99讲-各区域热门商品统计：模块介绍</p>
+<p>第100讲-各区域热门商品统计：需求分析、技术方案设计以及数据设计</p>
+<p>第101讲-各区域热门商品统计：查询用户指定日期范围内的点击行为数据</p>
+<p>第102讲-各区域热门商品统计：异构数据源之从MySQL中查询城市数据</p>
+<p>第103讲-各区域热门商品统计：关联城市信息以及RDD转换为DataFrame后注册临时表</p>
+<p>第104讲-各区域热门商品统计：开发自定义UDAF聚合函数之group_concat_distinct()</p>
+<p>第105讲-各区域热门商品统计：查询各区域各商品的点击次数并拼接城市列表</p>
+<p>第106讲-各区域热门商品统计：关联商品信息并使用自定义get_json_object函数和内置if函数标记经营类型</p>
+<p>第106讲-各区域热门商品统计：使用开窗函数统计各区域的top3热门商品</p>
+<p>第107讲-各区域热门商品统计：使用内置case when函数给各个区域打上级别标记</p>
+<p>第108讲-各区域热门商品统计：将结果数据写入MySQL中</p>
+<p>第109讲-各区域热门商品统计：Spark SQL数据倾斜解决方案</p>
+<p>第110讲-各区域热门商品统计：生产环境测试</p>
+<h3 id="广告点击流量实时统计："><a href="#广告点击流量实时统计：" class="headerlink" title="广告点击流量实时统计："></a>广告点击流量实时统计：</h3><p>第111讲-广告点击流量实时统计：需求分析、技术方案设计以及数据设计</p>
+<p>第112讲-广告点击流量实时统计：为动态黑名单实时计算每天各用户对各广告的点击次数</p>
+<p>第113讲-广告点击流量实时统计：使用高性能方式将实时计算结果写入MySQL中</p>
+<p>第114讲-广告点击流量实时统计：过滤出每个batch中的黑名单用户以生成动态黑名单</p>
+<p>第115讲-广告点击流量实时统计：基于动态黑名单进行点击行为过滤</p>
+<p>第116讲-广告点击流量实时统计：计算每天各省各城市各广告的点击量</p>
+<p>第117讲-广告点击流量实时统计：计算每天各省的top3热门广告</p>
+<p>第118讲-广告点击流量实时统计：计算每天各广告最近1小时滑动窗口内的点击趋势</p>
+<p>第119讲-广告点击流量实时统计：实现实时计算程序的HA高可用性</p>
+<p>第120讲-广告点击流量实时统计：对实时计算程序进行性能调优</p>
+<p>第121讲-广告点击流量实时统计：生产环境测试</p>
+<p>第122讲-课程总结：都学到了什么？</p>
+<h2 id="新升级增加课程大纲"><a href="#新升级增加课程大纲" class="headerlink" title="新升级增加课程大纲"></a>新升级增加课程大纲</h2><p>第123讲-（赠送）Spark 2.0-新特性介绍</p>
+<p>第124讲-（赠送）Spark 2.0-新特性介绍-易用性：标准化SQL支持以及更合理的API</p>
+<p>第125讲-（赠送）Spark 2.0-新特性介绍-高性能：让Spark作为编译器来运行</p>
+<p>第126讲-（赠送）Spark 2.0-新特性介绍-智能化：Structured Streaming介绍</p>
+<p>第127讲-（赠送）Spark 2.0-新特性介绍-Spark 1.x的Volcano Iterator Model技术缺陷分析</p>
+<p>第128讲-（赠送）Spark 2.0-新特性介绍-whole-stage code generation技术和vectorization技术</p>
+<p>第129讲-（赠送）Spark 2.0-Spark 2.x与1.x对比以及分析、学习建议以及使用建议</p>
+<p>第130讲-（赠送）Spark 2.0-课程环境搭建：虚拟机、CentOS、Hadoop、Spark等</p>
+<p>第131讲-（赠送）Spark 2.0-开发环境搭建：Eclipse+Maven+Scala+Spark</p>
+<p>第132讲-基于Spark 2.0的用户活跃度分析：模块介绍以及交互式用户行为分析系统的解释</p>
+<p>第133讲-基于Spark 2.0的用户活跃度分析：统计指定时间内访问次数最多的10个用户</p>
+<p>第134讲-基于Spark 2.0的用户活跃度分析：统计指定时间内购买金额最多的10个用户</p>
+<p>第135讲-基于Spark 2.0的用户活跃度分析：统计最近一个周期相比上一个周期访问次数增长最多的10个用户</p>
+<p>第136讲-基于Spark 2.0的用户活跃度分析：统计最近一个周期相比上一个周期购买金额增长最多的10个用户</p>
+<p>第137讲-基于Spark 2.0的用户活跃度分析：统计指定注册时间范围内头7天访问次数最高的10个用户</p>
+<p>第138讲-基于Spark 2.0的用户活跃度分析：统计指定注册时间范围内头7天购买金额最高的10个用户</p>
+<h2 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h2><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：</p>
+<p><a href="https://itvideos.github.io/categories/" target="_blank" rel="noopener">教程分类说明</a>：<a href="https://itvideos.github.io/categories/" target="_blank" rel="noopener">https://itvideos.github.io/categories/</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p><a href="https://itvideos.github.io/about/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="JackChan(QQ2434276084) 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="JackChan(QQ2434276084) 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Spark-2-0大型项目实战/" rel="tag"># Spark 2.0大型项目实战</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/16/大数据/Spark 2.0从入门到精通/" rel="next" title="Spark 2.0从入门到精通：Scala编程、大数据开发、上百个实战案例、内核源码深度剖析">
+                <i class="fa fa-chevron-left"></i> Spark 2.0从入门到精通：Scala编程、大数据开发、上百个实战案例、内核源码深度剖析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/16/Android/Android系统定制-从听说到入门/" rel="prev" title="Android系统定制-从听说到入门">
+                Android系统定制-从听说到入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/allen.jpg"
+                alt="JackChan(QQ2434276084)" />
+            
+              <p class="site-author-name" itemprop="name">JackChan(QQ2434276084)</p>
+              <p class="site-description motion-element" itemprop="description">远方除了远，一无是处！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程介绍"><span class="nav-number">1.</span> <span class="nav-text">课程介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容简介"><span class="nav-number">2.</span> <span class="nav-text">内容简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本课程的最大特色"><span class="nav-number">3.</span> <span class="nav-text">本课程的最大特色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-2-0实战升级！"><span class="nav-number">4.</span> <span class="nav-text">Spark 2.0实战升级！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#课程大纲"><span class="nav-number">5.</span> <span class="nav-text">课程大纲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大数据集群搭建"><span class="nav-number">5.1.</span> <span class="nav-text">大数据集群搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户访问session分析："><span class="nav-number">5.2.</span> <span class="nav-text">用户访问session分析：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#企业级性能调优、troubleshooting经验与数据倾斜解决方案："><span class="nav-number">5.3.</span> <span class="nav-text">企业级性能调优、troubleshooting经验与数据倾斜解决方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面单跳转化率统计："><span class="nav-number">5.4.</span> <span class="nav-text">页面单跳转化率统计：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各区域热门商品统计："><span class="nav-number">5.5.</span> <span class="nav-text">各区域热门商品统计：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广告点击流量实时统计："><span class="nav-number">5.6.</span> <span class="nav-text">广告点击流量实时统计：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新升级增加课程大纲"><span class="nav-number">6.</span> <span class="nav-text">新升级增加课程大纲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多教程"><span class="nav-number">7.</span> <span class="nav-text">更多教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取方式"><span class="nav-number">8.</span> <span class="nav-text">获取方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackChan(QQ2434276084)</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("N85VKE1O3YBok6Gmhxyq2zYR-gzGzoHsz", "jDziCU2LPGftl1fXWbb1xfG6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

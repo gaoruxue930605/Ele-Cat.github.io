@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Kotlin," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="课程介绍 希望各位朋友抓住编程语言更新换代的过渡期，走在别人前面, 尽早掌握Kotlin这门编程语言，等Kotlin大红大紫的时候相信你已经是专家了。">
+<meta name="keywords" content="Kotlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从Java到Kotlin系列精讲">
+<meta property="og:url" content="git@github.com:ItVideos/ItVideos.github.io.git/2018/02/28/Android/从Java到Kotlin系列精讲/index.html">
+<meta property="og:site_name" content="JustDoIt">
+<meta property="og:description" content="课程介绍 希望各位朋友抓住编程语言更新换代的过渡期，走在别人前面, 尽早掌握Kotlin这门编程语言，等Kotlin大红大紫的时候相信你已经是专家了。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLAL6ppD8fOaBlWdDSDceQ1k7EJtfKCMUcPsffqoFhcITujT8uIxoW5ypHRLPxBwzHQ/510">
+<meta property="og:updated_time" content="2018-02-28T04:51:31.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从Java到Kotlin系列精讲">
+<meta name="twitter:description" content="课程介绍 希望各位朋友抓住编程语言更新换代的过渡期，走在别人前面, 尽早掌握Kotlin这门编程语言，等Kotlin大红大紫的时候相信你已经是专家了。">
+<meta name="twitter:image" content="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLAL6ppD8fOaBlWdDSDceQ1k7EJtfKCMUcPsffqoFhcITujT8uIxoW5ypHRLPxBwzHQ/510">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="git@github.com:ItVideos/ItVideos.github.io.git/2018/02/28/Android/从Java到Kotlin系列精讲/"/>
+
+
+
+
+
+  <title>从Java到Kotlin系列精讲 | JustDoIt</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JustDoIt</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">IT视频教程资源站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="git@github.com:ItVideos/ItVideos.github.io.git/2018/02/28/Android/从Java到Kotlin系列精讲/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JackChan(QQ2434276084)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/allen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JustDoIt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">从Java到Kotlin系列精讲</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T12:44:59+08:00">
+                2018-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/28/Android/从Java到Kotlin系列精讲/" class="leancloud_visitors" data-flag-title="从Java到Kotlin系列精讲">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h2><p><img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLAL6ppD8fOaBlWdDSDceQ1k7EJtfKCMUcPsffqoFhcITujT8uIxoW5ypHRLPxBwzHQ/510" alt=""></p>
+<p>希望各位朋友抓住编程语言更新换代的过渡期，走在别人前面, 尽早掌握Kotlin这门编程语言，等Kotlin大红大紫的时候相信你已经是专家了。</p>
+<a id="more"></a>
+<h2 id="课程目录"><a href="#课程目录" class="headerlink" title="课程目录"></a>课程目录</h2><p><a href="https://ke.qq.com/course/233042" target="_blank" rel="noopener">https://ke.qq.com/course/233042</a></p>
+<h3 id="模块一：Kotlin从零基础到进阶"><a href="#模块一：Kotlin从零基础到进阶" class="headerlink" title="模块一：Kotlin从零基础到进阶"></a>模块一：Kotlin从零基础到进阶</h3><p>Kotlin核心基础</p>
+<ul>
+<li>1.1    函数和变量</li>
+<li>1.2    字符串模版</li>
+<li>1.3    When表达式</li>
+<li>1.4    迭代</li>
+<li>1.5    尾递归</li>
+<li>1.6    函数调用</li>
+<li>1.7    具名参数</li>
+<li>1.8    扩展函数和扩展属性</li>
+<li>1.9    类接口和对象</li>
+<li>1.10    Open，final和abstract修饰符</li>
+<li>1.11    密封类</li>
+<li>1.12    Object关键字</li>
+<li>1.13    Lambda编程</li>
+<li>1.14    高阶函数</li>
+<li>1.15    SAM函数式接口</li>
+<li>1.16    all，any，may，filter，count，groupBy，with，apply高阶函数</li>
+<li>1.17    Kotlin类型系统</li>
+<li>1.18    空安全</li>
+<li>1.19    数组和集合</li>
+<li>1.20    运算符重载</li>
+<li>1.21    属性委托和接口委托</li>
+<li>1.22    闭包</li>
+<li>1.23    泛型</li>
+<li>1.24    注解和反射</li>
+<li>1.25    DSL(领域特定编程语言)</li>
+</ul>
+<h3 id="模块二：Kotlin安卓项目实战-手机影音"><a href="#模块二：Kotlin安卓项目实战-手机影音" class="headerlink" title="模块二：Kotlin安卓项目实战(手机影音)"></a>模块二：Kotlin安卓项目实战(手机影音)</h3><ul>
+<li>2.1 课程介绍及APP效果展示</li>
+<li>2.2 Kotlin配置</li>
+<li>2.3 基类抽取</li>
+<li>2.4 Splash界面实现</li>
+<li>2.5 主界面实现和tab切换</li>
+<li>2.6 PreferenceFragment实现设置界面</li>
+<li>2.7 首页列表数据加载及适配</li>
+<li>2.8 对okhttp进行封装(重点)</li>
+<li>2.9 悦单界面数据加载及适配</li>
+<li>2.10 对首页和悦单界面进行抽取(重点)</li>
+<li>2.11 mv界面tab数据获取及适配</li>
+<li>2.12 mv每一个tab界面实现</li>
+<li>2.13 视频播放界面实现(重点)</li>
+<li>2.14 响应系统视频播放</li>
+<li>2.15 vbang界面数据获取(异步，动态权限获取)及适配</li>
+<li>2.16 音乐播放界面实现</li>
+<li>2.17 service中播放音乐</li>
+<li>2.18 音乐界面更新及操作</li>
+<li>2.19 弹出音乐列表</li>
+<li>2.20 自定义播放歌词(重点)</li>
+<li>2.21 手动控制歌词(重点)</li>
+</ul>
+<h3 id="模块三：Kotlin安卓项目实战-即时通讯项目"><a href="#模块三：Kotlin安卓项目实战-即时通讯项目" class="headerlink" title="模块三：Kotlin安卓项目实战(即时通讯项目)"></a>模块三：Kotlin安卓项目实战(即时通讯项目)</h3><ul>
+<li>3.01 课程介绍及APP效果展示</li>
+<li>3.02 即时通讯介绍</li>
+<li>3.03 MVC、MVP、MVVM</li>
+<li>3.04 Kotlin配置</li>
+<li>3.05 基类创建</li>
+<li>3.06 Splash界面实现</li>
+<li>3.07 环信SDK集成</li>
+<li>3.08 登录界面布局实现</li>
+<li>3.09 注册界面布局实现</li>
+<li>3.10 注册流程</li>
+<li>3.11 Bmob集成</li>
+<li>3.12 注册实现</li>
+<li>3.13 登录实现</li>
+<li>3.14 主界面底部导航条实现</li>
+<li>3.15 主界面四个页面切换</li>
+<li>3.16 动态界面实现</li>
+<li>3.17 联系人列表实现</li>
+<li>3.18 自定义控件SlideBar实现</li>
+<li>3.19 添加好友界面实现</li>
+<li>3.20 搜索其他用户</li>
+<li>3.21 GreenDAO使用</li>
+<li>3.22 发送好友申请</li>
+<li>3.23 删除联系人</li>
+<li>3.24 聊天界面布局实现</li>
+<li>3.25 发送一条消息</li>
+<li>3.26 接收一条消息</li>
+<li>3.27 会话界面实现</li>
+<li>3.28 后台收到消息处理</li>
+<li>3.29 多设备登录</li>
+</ul>
+<h3 id="模块四：Kotlin项目实战-外卖项目"><a href="#模块四：Kotlin项目实战-外卖项目" class="headerlink" title="模块四：Kotlin项目实战(外卖项目)"></a>模块四：Kotlin项目实战(外卖项目)</h3><ul>
+<li>4.01 课程介绍及APP效果展示</li>
+<li>4.02 Kotlin配置</li>
+<li>4.03 从MVC到MVP</li>
+<li>4.04 使用dagger2解耦V与P层</li>
+<li>4.05 主界面fragment实现和tab切换</li>
+<li>4.06 沉浸式状态栏以及滚动颜色渐变</li>
+<li>4.07 RecycleView的多条目类型使用</li>
+<li>4.08 了解servlet规范与接口校验</li>
+<li>4.09 使用retrofit加载首页数据</li>
+<li>4.10 对网络请求进行封装</li>
+<li>4.11 短信验证码登录</li>
+<li>4.12 使用Ormlite缓存用户信息</li>
+<li>4.13 极光推送的配置</li>
+<li>4.14 推送订单后自动刷新</li>
+<li>4.15 商品列表与商品的双向绑定</li>
+<li>4.16 双列表视图的联动</li>
+<li>4.17 点餐数红点功能与抛物线动画</li>
+<li>4.18 购物车添加与清空以及缓存</li>
+<li>4.19 地址管理</li>
+<li>4.20 下单使用支付宝支付</li>
+<li>4.21 集成高德地图实现一键点选地址</li>
+<li>4.22 地图展示商家骑手位置</li>
+<li>4.23 推送实现骑手移动并绘制轨迹</li>
+</ul>
+<h3 id="模块五：Kotlin高新技术"><a href="#模块五：Kotlin高新技术" class="headerlink" title="模块五：Kotlin高新技术"></a>模块五：Kotlin高新技术</h3><ul>
+<li>5.01 课程介绍及APP效果展示</li>
+<li>5.02 Kotlin配置</li>
+<li>5.03 集成阿里热修复框架AndFix</li>
+<li>5.04 热修复完成</li>
+</ul>
+<h3 id="模块六：Kotlin混合开发"><a href="#模块六：Kotlin混合开发" class="headerlink" title="模块六：Kotlin混合开发"></a>模块六：Kotlin混合开发</h3><ul>
+<li>6.01 课程介绍及APP效果展示</li>
+<li>6.02 Kotlin配置</li>
+<li>6.03 WebView初始化H5页面</li>
+<li>6.04 Kotlin和H5通信1（Kotlin主动）</li>
+<li>6.05 Kotlin和H5通信2（H5主动）</li>
+<li>6.06 Kotlin和H5通信3（callback）</li>
+<li>6.07 H5回调Kotlin获取酒店数据</li>
+<li>6.08 H5在线模板刷新数据</li>
+<li>6.09 Kotlin仿QQ底部弹出Dialog</li>
+<li>6.10 H5本地模板打包上线</li>
+</ul>
+<h3 id="模块七：Kotlin高级实战技术-增量更新"><a href="#模块七：Kotlin高级实战技术-增量更新" class="headerlink" title="模块七：Kotlin高级实战技术(增量更新)"></a>模块七：Kotlin高级实战技术(增量更新)</h3><ul>
+<li>7.01 课程介绍及APP效果展示</li>
+<li>7.02 Kotlin配置</li>
+<li>7.03 增量更新的集成</li>
+<li>7.04 生成更新的patch包</li>
+<li>7.05 更新完成</li>
+</ul>
+<h3 id="模块八：Kotlin嵌入式硬件物联网开发"><a href="#模块八：Kotlin嵌入式硬件物联网开发" class="headerlink" title="模块八：Kotlin嵌入式硬件物联网开发"></a>模块八：Kotlin嵌入式硬件物联网开发</h3><ul>
+<li>8.01 物联网开发入门(嵌入式开发)</li>
+<li>8.02 走马灯案例(GPIO入门)</li>
+<li>8.03 红绿灯案例(GPIO进阶)</li>
+<li>8.04 呼吸灯案例(PWM方波)</li>
+<li>8.05 声控电灯案例(传感器,IIC协议)</li>
+<li>8.06 摩拜单车案例(GPS驱动，UART协议)</li>
+</ul>
+<h3 id="模块九：Kotlin与JavaEE框架"><a href="#模块九：Kotlin与JavaEE框架" class="headerlink" title="模块九：Kotlin与JavaEE框架"></a>模块九：Kotlin与JavaEE框架</h3><ul>
+<li>9.01采用Kotlin开发基于SSH的JavaEE项目，带你杀入JavaEE后台开发的世界</li>
+</ul>
+<h3 id="模块十：Kotlin后台项目实战开发"><a href="#模块十：Kotlin后台项目实战开发" class="headerlink" title="模块十：Kotlin后台项目实战开发"></a>模块十：Kotlin后台项目实战开发</h3><ul>
+<li>10.01Kotlin + Spring Boot微服务开发的微信点餐系统</li>
+</ul>
+<h3 id="模块十一：Kotlin与人工智能和大数据"><a href="#模块十一：Kotlin与人工智能和大数据" class="headerlink" title="模块十一：Kotlin与人工智能和大数据"></a>模块十一：Kotlin与人工智能和大数据</h3><ul>
+<li>12.01使用Kotlin编写基于Tensorflow的人工智能和机器学习程序， 通过海量图片大数据学习， 实现图片的分类自动检索，鉴黄。 </li>
+</ul>
+<h2 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h2><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：</p>
+<p><a href="https://itvideos.github.io/categories/" target="_blank" rel="noopener">教程分类说明</a>：<a href="https://itvideos.github.io/categories/" target="_blank" rel="noopener">https://itvideos.github.io/categories/</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p><a href="https://itvideos.github.io/about/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="JackChan(QQ2434276084) 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="JackChan(QQ2434276084) 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Kotlin/" rel="tag"># Kotlin</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/07/后端开发/Java/JAVA高并发高性能高可用高扩展架构性能优化系列课程/" rel="next" title="JAVA高并发高性能高可用高扩展架构性能优化系列课程">
+                <i class="fa fa-chevron-left"></i> JAVA高并发高性能高可用高扩展架构性能优化系列课程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/28/Android/Kotlin手机影音/" rel="prev" title="Kotlin手机影音">
+                Kotlin手机影音 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/allen.jpg"
+                alt="JackChan(QQ2434276084)" />
+            
+              <p class="site-author-name" itemprop="name">JackChan(QQ2434276084)</p>
+              <p class="site-description motion-element" itemprop="description">远方除了远，一无是处！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程介绍"><span class="nav-number">1.</span> <span class="nav-text">课程介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#课程目录"><span class="nav-number">2.</span> <span class="nav-text">课程目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块一：Kotlin从零基础到进阶"><span class="nav-number">2.1.</span> <span class="nav-text">模块一：Kotlin从零基础到进阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块二：Kotlin安卓项目实战-手机影音"><span class="nav-number">2.2.</span> <span class="nav-text">模块二：Kotlin安卓项目实战(手机影音)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块三：Kotlin安卓项目实战-即时通讯项目"><span class="nav-number">2.3.</span> <span class="nav-text">模块三：Kotlin安卓项目实战(即时通讯项目)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块四：Kotlin项目实战-外卖项目"><span class="nav-number">2.4.</span> <span class="nav-text">模块四：Kotlin项目实战(外卖项目)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块五：Kotlin高新技术"><span class="nav-number">2.5.</span> <span class="nav-text">模块五：Kotlin高新技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块六：Kotlin混合开发"><span class="nav-number">2.6.</span> <span class="nav-text">模块六：Kotlin混合开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块七：Kotlin高级实战技术-增量更新"><span class="nav-number">2.7.</span> <span class="nav-text">模块七：Kotlin高级实战技术(增量更新)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块八：Kotlin嵌入式硬件物联网开发"><span class="nav-number">2.8.</span> <span class="nav-text">模块八：Kotlin嵌入式硬件物联网开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块九：Kotlin与JavaEE框架"><span class="nav-number">2.9.</span> <span class="nav-text">模块九：Kotlin与JavaEE框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块十：Kotlin后台项目实战开发"><span class="nav-number">2.10.</span> <span class="nav-text">模块十：Kotlin后台项目实战开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块十一：Kotlin与人工智能和大数据"><span class="nav-number">2.11.</span> <span class="nav-text">模块十一：Kotlin与人工智能和大数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多教程"><span class="nav-number">3.</span> <span class="nav-text">更多教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取方式"><span class="nav-number">4.</span> <span class="nav-text">获取方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackChan(QQ2434276084)</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("N85VKE1O3YBok6Gmhxyq2zYR-gzGzoHsz", "jDziCU2LPGftl1fXWbb1xfG6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
