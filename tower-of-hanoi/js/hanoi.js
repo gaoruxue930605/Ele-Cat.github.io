@@ -277,7 +277,7 @@ var delay = 200; //in milliseconds
     }
     
     function solve(btn){
-        if (btn.value=="Solve"){
+        if (btn.value=="自动"){
             if (movectr>0 && !gameOver && !stop)
                 if (!confirm("Current game will be aborted, would you like to continue?")) return;
             btn.value="Stop";
@@ -296,7 +296,7 @@ var delay = 200; //in milliseconds
         else {
             if (t) {
                 window.clearTimeout(t);
-                btn.value="Solve";
+                btn.value="自动";
                 frm.btnIns.disabled=false;
                 frm.btnRes.disabled=false;
                 t = null;
@@ -323,7 +323,7 @@ var delay = 200; //in milliseconds
             //swal("Can you do that in "+movectr+" moves?");
             gameOver=true;
             stop=false;
-            frm.btnSolve.value="Solve";
+            frm.btnSolve.value="自动";
             frm.btnIns.disabled=false;
             frm.btnRes.disabled=false;
         }
