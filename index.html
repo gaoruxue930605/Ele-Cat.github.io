@@ -161,7 +161,7 @@
       canvas_height = theCanvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
       random_points = [],
       all_points = [];
-    theCanvas.style = "position: fixed; top: 0px; left: 0px;";
+    theCanvas.style = "position: fixed; top: 0px; left: 0px; z-index: -1";
     function draw() {
       //清屏
       ctx.clearRect(0, 0, canvas_width, canvas_height);
