@@ -1,4 +1,4 @@
-var delay = 200; //in milliseconds
+var delay = 500; //in milliseconds
 
     var	drag=false;
     var objDisk=null;
