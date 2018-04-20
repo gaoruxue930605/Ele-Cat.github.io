@@ -280,7 +280,7 @@ var delay = 200; //in milliseconds
         if (btn.value=="自动"){
             if (movectr>0 && !gameOver && !stop)
                 if (!confirm("Current game will be aborted, would you like to continue?")) return;
-            btn.value="Stop";
+            btn.value="暂停";
             initVars();
             stop=false;
             demo=true;
