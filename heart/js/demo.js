@@ -11,7 +11,7 @@ for (var i = 0; i < 36; i++) {
 		} else {
 			n = 0;
 		}
-	},1000)
+	},2000)
 	console.log(n)
 	heart.appendChild(oDiv);
 }
