@@ -463,7 +463,7 @@
             game.over = function () {
                 $(c).removeClass("playing");
                 if(isMobile) {
-                    c.removeEventListener("touchmove");
+                    // c.removeEventListener("touchmove");
                 } else {
                     $(c).off("mousemove");
                 }
