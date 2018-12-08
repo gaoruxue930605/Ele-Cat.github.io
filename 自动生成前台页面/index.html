@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/XQ_drag.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .controller {
+            position: fixed;
+            top: 0;
+            left: 50%;
+        }
+        
+        .main {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .drag {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            display: inline-block;
+            border: 2px solid #000000;
+            box-sizing: border-box;
+        }
+        
+        .drag img {
+            max-width: 100%;
+        }
+        
+        .drop {
+            width: 100%;
+            height: 200px;
+            display: block;
+            border: 1px solid #F05B4F;
+            box-sizing: border-box;
+        }
+        
+        .left {
+            width: 20%;
+            height: 100%;
+        }
+        
+        .right {
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="controller">
+        <button class="getCode">获取页面代码</button>
+    </div>
+    <div class="main">
+        <div class="drop left" xq_drop="true">
+            <p>配置模块</p>
+            <div class="drag" xq_drag="true">
+                <img src="http://stdl.qq.com/stdl/newtabcms/icon/1313_100.png" ondragstart="return false" />
+            </div>
+            <div class="drag" xq_drag="true">
+                <img src="http://stdl.qq.com/stdl/newtabcms/icon/0042_100.png" ondragstart="return false" />
+            </div>
+            <div class="drag" xq_drag="true">
+                <img src="http://stdl.qq.com/stdl/newtabcms/icon/1062_100.png" ondragstart="return false" />
+            </div>
+            <div class="drag" xq_drag="true">
+                牛逼到不行
+            </div>
+        </div>
+        <div class="right">
+            <div class="drop" xq_drop="true"></div>
+            <div class="drop" xq_drop="true"></div>
+            <div class="drop" xq_drop="true"></div>
+            <div class="drop" xq_drop="true"></div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $(".getCode").click(function() {
+                alert($('.right').html())
+            });
+        });
+    </script>
+</body>
+
+</html>
